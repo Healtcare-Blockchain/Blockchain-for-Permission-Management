@@ -10,3 +10,5 @@ Storage patterns: [https://ethereum.stackexchange.com/questions/13167/are-there-
 
 Factory contract: [https://ethereum.stackexchange.com/questions/2161/factory-contract-that-can-verify-its-children](https://ethereum.stackexchange.com/questions/2161/factory-contract-that-can-verify-its-children)
 
+NFTs: [https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq](https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq)
+
