@@ -1,11 +1,5 @@
-# Blockchain Permission Management
+# Initial page
 
-> Managing permissions on the blockchain not because we need to but because we can.
+Dus dit werkt wel?
 
-## Glossary
-
-1. About the project
-2. Getting started
-3. 
-
-
+blah blah
