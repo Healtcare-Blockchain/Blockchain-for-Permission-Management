@@ -1,5 +1,6 @@
-# Initial page
+---
+description: Managing permissions using contracts on the blockchain
+---
 
-Dus dit werkt wel?
+# Blockchain Permission Management
 
-blah blah
