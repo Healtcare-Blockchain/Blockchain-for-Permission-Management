@@ -67,5 +67,5 @@ To acces the blockchain go into the folder that you created for you blockchain a
 $ geth attach geth.ipc 
 ```
 
-
+Succes! You now have acces to your blockchain.
 
