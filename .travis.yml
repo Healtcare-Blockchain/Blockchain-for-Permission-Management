@@ -1,6 +1,6 @@
 language: python
 install:
-  - pip install cookiecutter
+  - pip install --user -r requirements.txt
 services:
   - docker
 script:
