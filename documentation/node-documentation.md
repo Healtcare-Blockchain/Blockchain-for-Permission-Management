@@ -5,7 +5,7 @@ Het eindproduct van deze challenge wordt een verzameling van systemen die medisc
 
 ## Achtergrond informatie
 Een netwerk is in de context van Ethereum een verzameling van nodes die verbonden zijn met elkaar. Deze nodes draaien een Ethereum client. Een client is een applicatie die Ethereum implementeert.[²][@NodesClients]
-Elke client kan een API blootstellen naar de buitenwereld. Via deze API kunnen applicaties verbinding leggen met een node.[³][@JSONRPCAPI]
+Elke client kan een API blootstellen naar de buitenwereld. Via deze API kunnen applicaties verbinding leggen met een node.[³][@EthereumClientAPI]
 
 Een private Ethereum blockchain is een netwerk dat niet vrij toegangelijk is. Het netwerk is dus niet openbaar. Private betekent in deze context achtergehouden en/of geisoleerd.[¹][@Networks]
 
@@ -24,7 +24,7 @@ http://104.248.81.215:8545
 ```
 
 #### Genesis block
-See <https://github.com>.
+**Zie dit bestand in de GitHub repository! - [genesis.json](https://github.com/Healtcare-Blockchain/Blockchain-for-Permission-Management/blob/main/documentation/genesis.json).**
 ##### Consensus algorithm
 ```
 Proof of Authority
@@ -57,22 +57,24 @@ Proof of Authority
 "0x328cea3299b1e42d7e158efec83450502027701df59560e2ea605656d3ea6621"
 ```
 
-#### Miner node enode
+### Api node settings
+
+#### Api node enode
 ```
 "enode://78846af2efa24d4283fc285caf0fff201ba8ed2d02018ec6147839f9b3ed77aa72ad1d8f1f74f18c6384723df38d99937b9480deea09cb67484567c9aea78077@104.248.81.215:30305"
 ```
 
-#### Miner node enr
+#### Api node enr
 ```
 "enr:-J24QFtzI8QsVhlmJWnmEy2qPbwvXnk0WJwpXia_U5bNsxYJc-nE8Nvr1WNku89VcwZJ6ZVMOuQwV_ng-cP0g_g0NLcCg2V0aMfGhABGUQmAgmlkgnY0gmlwhGj4UdeJc2VjcDI1NmsxoQN4hGry76JNQoP8KFyvD_8gG6jtLQIBjsYUeDn5s-13qoRzbmFwwIN0Y3CCdmGDdWRwgnZh"
 ```
 
-#### Miner node id
+#### Api node id
 ```
 "5183bc47d17214ace8baf8719efcf8e2ead3fe6365cee4bc60e1f8fa1babab40"
 ```
 
-#### Miner node genesis
+#### Api node genesis
 ```
 "0x328cea3299b1e42d7e158efec83450502027701df59560e2ea605656d3ea6621"
 ```
@@ -84,8 +86,8 @@ Proof of Authority
 ## Bronnen
 1. ethereum.org. ‘Networks’. Accessed 29 March 2021. [https://ethereum.org/en/developers/docs/networks/][@Networks].
 2. ethereum.org. ‘Nodes and Clients’. Accessed 29 March 2021. [https://ethereum.org/en/developers/docs/nodes-and-clients/][@NodesClients].
-3. ethereum.org. ‘JSON-RPC API’. Accessed 23 March 2021. [https://ethereum.org/en/developers/docs/apis/json-rpc/][@JSONRPCAPI].
+3. ethereum.org. ‘JSON-RPC API’. Accessed 23 March 2021. [https://ethereum.org/en/developers/docs/apis/json-rpc/][@EthereumClientAPI].
 
 [@NodesClients]: https://ethereum.org/en/developers/docs/nodes-and-clients/
 [@Networks]: https://ethereum.org/en/developers/docs/networks/
-[@JSONRPCAPI]: https://ethereum.org/en/developers/docs/apis/json-rpc/
+[@EthereumClientAPI]: https://ethereum.org/en/developers/docs/apis/json-rpc/
