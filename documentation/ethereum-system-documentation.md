@@ -1,7 +1,7 @@
-# Private Ethereum netwerk
+# Ethereum systeem documentatie
 _Documentversie 1.0.0_
 ## Introductie
-Het eindproduct van deze challenge wordt een verzameling van systemen die medische data kan delen. Een van die systemen is het toegangsrechtensysteem die de toegang regelt tot patiëntendata. Binnen het toegangsrechtensysteem wordt gebruik gemaakt van een private ethereum blockchain. Hierop gaan we de smartcontracts deployen en laten draaien.
+Het eindproduct van deze challenge wordt een verzameling van systemen die medische data kan delen. Een van die systemen is het toegangsrechtensysteem die de toegang regelt tot patiëntendata. Het toegangsrechtensysteem maakt gebruik van het Ethereumsysteem. Binnen dit systeem draait een private Ethereum netwerk. Op dit netwerk gaan we  smartcontracts deployen en laten draaien.
 
 ## Achtergrond informatie
 Een netwerk is in de context van Ethereum een verzameling van nodes die verbonden zijn met elkaar. Deze nodes draaien een Ethereum client. Een client is een applicatie die Ethereum implementeert.[²][@NodesClients]
