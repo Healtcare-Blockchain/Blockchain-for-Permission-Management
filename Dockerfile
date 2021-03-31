@@ -1,3 +1,3 @@
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 
-COPY api /API
+COPY api /api
