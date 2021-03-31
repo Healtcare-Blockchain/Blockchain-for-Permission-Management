@@ -1,5 +1,7 @@
 # Ethereum systeem documentatie
-_Documentversie 1.0.0_
+```
+Documentversie 1.1.0
+```
 ## Introductie
 Het eindproduct van deze challenge wordt een verzameling van systemen die medische data kan delen. Een van die systemen is het toegangsrechtensysteem die de toegang regelt tot patiëntendata. Het toegangsrechtensysteem maakt gebruik van het Ethereumsysteem. Binnen dit systeem draait een private Ethereum netwerk. Op dit netwerk gaan we  smartcontracts deployen en laten draaien.
 
@@ -24,7 +26,11 @@ http://104.248.81.215:8545
 ```
 
 #### Genesis block
-**Zie dit bestand in de GitHub repository! - [genesis.json](https://github.com/Healtcare-Blockchain/Blockchain-for-Permission-Management/blob/main/documentation/genesis.json).**
+**Zie dit bestand in de GitHub repository. Link staat hieronder:**
+
+```shell
+https://github.com/Healtcare-Blockchain/Blockchain-for-Permission-Management/blob/main/documentation/genesis.json
+```
 ##### Consensus algorithm
 ```
 Proof of Authority
@@ -33,6 +39,11 @@ Proof of Authority
 ##### Signer accounts
 ```
 0x69f87bf57da1db2ff0e1e837915c3df018911408
+```
+
+##### Private key van signer accounts
+```
+3d90219cda89d9d4d3d556e6c1d20a160f9520a7cf8b7a75507d1bf88ba8f00f
 ```
 
 ### Miner node settings
@@ -82,6 +93,26 @@ Proof of Authority
 
 ### Toevoegen van member node
 
+### Inloggen op het signer account om smart contracts te deployen
+Er wordt vanuit gegaan dat je geth hebt geïnstaleerd. En dat geth gebruiktmaakt van een data map genaamd `node_data_1`. Maak deze map aan of maak gebruik van een bestaande data map.
+
+##### Zet private key in een bestand
+```bash
+# This is a bash shell \
+echo "3d90219cda89d9d4d3d556e6c1d20a160f9520a7cf8b7a75507d1bf88ba8f00f" > privatekey.txt
+```
+
+##### Importeer private key in geth
+```bash
+# This is a bash shell \
+geth --datadir node_data_1 account import privatekey.txt
+```
+
+##### Wachtwoord invullen
+Er wordt dan gevraagd om een wachtwoord in te vullen. Dit wachwoord moet je zelf verzinnen. Met dit wachtwoord wordt de private key versleuteld. Het maakt niet uit wat je hier invult zolang je het maar onthoudt. 
+
+##### Je bent nu klaar
+Je krijgt nu het publieke adres te zien van het account wat je net hebt toegevoegd. Dit adres kan je nu gebruiken om mee te signen.
 
 ## Bronnen
 1. ethereum.org. ‘Networks’. Accessed 29 March 2021. [https://ethereum.org/en/developers/docs/networks/][@Networks].
