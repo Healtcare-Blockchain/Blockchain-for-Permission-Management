@@ -1,25 +1,11 @@
-import json
-from web3 import Web3
 from cmd import Cmd
-from art import text2art
+
 import colorama
-from colorama import Fore, Back
+from art import text2art
+from colorama import Fore
 
-w3 = Web3(Web3.HTTPProvider('http://127.0.0.1:8085'))
-
-def hello_world():
-    if (w3.isConnected()):
-        print("Connecting to Node succesful")
-
-        # latest block
-        # print(w3.eth.get_block('latest'))
-        trufflefile = json.load(open('./ABI/HelloWorld.json'))
-        abi = trufflefile['abi']
-        contract = w3.eth.contract(address='0x5d810f1295Dd14a7f57Ce7360EC86905D90528A3', abi=abi);
-        answer = contract.functions.getGreeting().call();
-        return("Response: " + answer)
-    else:
-        return("Connecting to Node failed")
+import account_functions as acf
+import permission_functions as pmf
 
 
 class MyPrompt(Cmd):
@@ -33,8 +19,8 @@ class MyPrompt(Cmd):
         if inp == 'hello world' or inp == 'hw' or inp == 'Hello World':
             return self.do_hello_world(inp)
 
-        if inp == 'latest':
-            return self.do_latest_block(inp)
+        # if inp == 'latest':
+        #     return self.do_latest_block(inp)
 
         print("{} is not a known command".format(inp))
 
@@ -52,11 +38,23 @@ class MyPrompt(Cmd):
 
     def do_hello_world(self, inp):
         '''Use the hello world contract to test for a return'''
-        print (Fore.RED + hello_world())
+        print (Fore.RED + acf.hello_world())
 
-    def do_latest_block(self, inp):
-        '''Get latest block on the chain'''
-        print(w3.eth.get_block('latest'))
+    def do_set_permission(self, inp):
+        '''Set permission between two adresses'''
+        sender = input("Sender adress: ")
+        they = input("Receiver adress: ")
+        print(pmf.set_permission(sender, they))
+
+    def do_check_permission(self, inp):
+        '''check permission between two adresses'''
+        print(pmf.check_permission())
+
+    def do_get_accounts(self, inp):
+        print()
+
+    def do_get_privatekey(self, inp):
+        print(acf.get_privatekey())
 
     do_EOF = do_exit
     help_EOF = help_exit
