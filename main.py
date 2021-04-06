@@ -17,5 +17,5 @@ async def set_permission(sender: str, they: str):
     return {pmf.set_permission(sender, they)}
 
 @app.get("/get/permissions/")
-async def check_permission(sender: str, they: str):
+async def check_permission():
     return {pmf.check_permission()}
