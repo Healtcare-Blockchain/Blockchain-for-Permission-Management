@@ -1,7 +1,7 @@
 art==5.1
 attrs==20.3.0
 base58==2.1.0
-bitarray
+bitarray==1.2.2
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
