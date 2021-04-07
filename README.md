@@ -1,5 +1,7 @@
 # Blockchain Permission Management
 
+[![Build Status](https://travis-ci.com/Ruben170/Blockchain-for-Permission-Management.svg?branch=main)](https://travis-ci.com/Ruben170/Blockchain-for-Permission-Management)
+
 > Managing permissions on the blockchain not because we need to but because we can.
 
 ## Glossary
@@ -7,13 +9,17 @@
 1. About the project
 2. Getting started
 
-
-
 ### About the project
 
 This project started as a schoolproject from Fontys ICT in collaboration with Peercode. It is a Python project that interacts with a private ethereum network. This blockchain has a smart contract which is being used to manage the permissions between different accounts. This can be used in many different usecases.
 
 #### Quick project breakdown
+
+
+
+```text
+<iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/2c12e1f7-cbeb-4ad9-90ab-7822abbb1fb4" id="2BqrCEOzPFd-"></iframe>
+```
 
 ![Project Breakdown 1.0](https://documents.lucid.app/documents/3aa1f67a-c1f8-44f5-875d-ced1a5271091/pages/YRprA5eG3Zio?a=8548&x=95&y=-1238&w=990&h=1276&store=1&accept=image%2F*&auth=LCA%20f2cc9be68c12069b752a21519a4ec3e21a6ec74c-ts%3D1617264406)
 
