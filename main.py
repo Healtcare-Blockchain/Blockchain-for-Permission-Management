@@ -13,7 +13,9 @@ async def root():
 
 
 @app.post("/post/permissions/")
-async def set_permission(sender: str, they: str):
+async def set_permission():
+    sender = ""
+    they = ""
     return {pmf.set_permission(sender, they)}
 
 @app.get("/get/permissions/")
