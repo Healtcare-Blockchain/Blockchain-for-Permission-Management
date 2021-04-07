@@ -15,12 +15,6 @@ This project started as a schoolproject from Fontys ICT in collaboration with Pe
 
 #### Quick project breakdown
 
-
-
-```text
-<iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/2c12e1f7-cbeb-4ad9-90ab-7822abbb1fb4" id="2BqrCEOzPFd-"></iframe>
-```
-
 ![Project Breakdown 1.0](https://documents.lucid.app/documents/3aa1f67a-c1f8-44f5-875d-ced1a5271091/pages/YRprA5eG3Zio?a=8548&x=95&y=-1238&w=990&h=1276&store=1&accept=image%2F*&auth=LCA%20f2cc9be68c12069b752a21519a4ec3e21a6ec74c-ts%3D1617264406)
 
 The above image consists of 2 systems which again consists of multiple containers:
