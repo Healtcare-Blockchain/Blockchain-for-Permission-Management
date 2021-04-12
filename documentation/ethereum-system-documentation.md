@@ -6,13 +6,13 @@ Documentversie 1.1.0
 Het eindproduct van deze challenge wordt een verzameling van systemen die medische data kan delen. Een van die systemen is het toegangsrechtensysteem die de toegang regelt tot patiëntendata. Het toegangsrechtensysteem maakt gebruik van het Ethereumsysteem. Binnen dit systeem draait een private Ethereum netwerk. Op dit netwerk gaan we  smartcontracts deployen en laten draaien.
 
 ## Achtergrond informatie
-Een netwerk is in de context van Ethereum een verzameling van nodes die verbonden zijn met elkaar. Deze nodes draaien een Ethereum client. Een client is een applicatie die Ethereum implementeert.[²][@NodesClients]
-Elke client kan een API blootstellen naar de buitenwereld. Via deze API kunnen applicaties verbinding leggen met een node.[³][@EthereumClientAPI]
+Een netwerk is in de context van Ethereum een verzameling van nodes die verbonden zijn met elkaar. Deze nodes draaien een Ethereum client. Een client is een applicatie die Ethereum implementeert.[¹][@NodesClients]
+Elke client kan een API blootstellen naar de buitenwereld. Via deze API kunnen applicaties verbinding leggen met een node.[²][@EthereumClientAPI]
 
-Een private Ethereum blockchain is een netwerk dat niet vrij toegangelijk is. Het netwerk is dus niet openbaar. Private betekent in deze context achtergehouden en/of geisoleerd.[¹][@Networks]
+Een private Ethereum blockchain is een netwerk dat niet vrij toegangelijk is. Het netwerk is dus niet openbaar. Private betekent in deze context achtergehouden en/of geisoleerd.[³][@Networks]
 
 ## Configuratie van het netwerk
-Voor de nodes maken we gebruik van geth. Dit is een ethereum client geschreven in de programmeertaal Go. Dit is de meest voorkomende client met de grootste userbase.[²][@NodesClients]
+Voor de nodes maken we gebruik van geth. Dit is een ethereum client geschreven in de programmeertaal Go. Dit is de meest voorkomende client met de grootste userbase.[¹][@NodesClients]
 
 ### Globale settings
 #### Network id
@@ -50,44 +50,44 @@ Proof of Authority
 
 #### Miner node enode
 ```
-"enode://9a38545f795599368083741f873fb5a260b04e79d57b84f064da5cd987db8fcf3c10d903edf98501becb3d277c2b115e2de7b34cdc72a25c0ffccbfecb742fe8@104.248.81.215:30303"
+"enode://85544396e2f25705b2e6358c29d6704b827279781e9af4d2b51b1f599cfbc56e5c428f4108361f08d6d6baf4a65ebed896671f74f6f3b8752dcdc820d6cb3da7@104.248.81.215:30303?discport=0"
 ```
 
 #### Miner node enr
 ```
-"enr:-J24QAF8CTeR-YqDxdRu6zG0PvlFP8KI1ajFJJQFLgVso3X7J_Kv7xNP-9gR6m17WplZrP6jfCk3LPQE6qWFz0UXjq0Og2V0aMfGhABGUQmAgmlkgnY0gmlwhGj4UdeJc2VjcDI1NmsxoQKaOFRfeVWZNoCDdB-HP7WiYLBOedV7hPBk2lzZh9uPz4RzbmFwwIN0Y3CCdl-DdWRwgnZf"
+"enr:-Ja4QE7KMGBsBdekoTMAUrpB9g4gNNyybKEr2hl-yuedz2X-U33yXCLG332rGUYcQFFTgdmqZR8Sir5YKLbSZbXnUBwCg2V0aMfGhAK_L1yAgmlkgnY0gmlwhGj4UdeJc2VjcDI1NmsxoQOFVEOW4vJXBbLmNYwp1nBLgnJ5eB6a9NK1Gx9ZnPvFboRzbmFwwIN0Y3CCdl8"
 ```
 
 #### Miner node id
 ```
-"enr:-J24QAF8CTeR-YqDxdRu6zG0PvlFP8KI1ajFJJQFLgVso3X7J_Kv7xNP-9gR6m17WplZrP6jfCk3LPQE6qWFz0UXjq0Og2V0aMfGhABGUQmAgmlkgnY0gmlwhGj4UdeJc2VjcDI1NmsxoQKaOFRfeVWZNoCDdB-HP7WiYLBOedV7hPBk2lzZh9uPz4RzbmFwwIN0Y3CCdl-DdWRwgnZf"
+"d359d1ca09aab2139d4379e44d55518a5e063da385c9aae85294ac2b356eef6b"
 ```
 
 #### Miner node genesis
 ```
-"0x328cea3299b1e42d7e158efec83450502027701df59560e2ea605656d3ea6621"
+"0x6c32a23f0ad9beb9608f1ab0da83532cf7932776a13cafd5d3a8f87d8cc0bc1f"
 ```
 
 ### Api node settings
 
 #### Api node enode
 ```
-"enode://78846af2efa24d4283fc285caf0fff201ba8ed2d02018ec6147839f9b3ed77aa72ad1d8f1f74f18c6384723df38d99937b9480deea09cb67484567c9aea78077@104.248.81.215:30305"
+"enode://d067e77bae467ab3e38a1d0da024f7c0ffd164b049047592aeb22e411c4d753a5746fa9b676df7efefd76fa5909ff371d2db9e550f9f98583f1c22d513487a9c@104.248.81.215:30305?discport=0"
 ```
 
 #### Api node enr
 ```
-"enr:-J24QFtzI8QsVhlmJWnmEy2qPbwvXnk0WJwpXia_U5bNsxYJc-nE8Nvr1WNku89VcwZJ6ZVMOuQwV_ng-cP0g_g0NLcCg2V0aMfGhABGUQmAgmlkgnY0gmlwhGj4UdeJc2VjcDI1NmsxoQN4hGry76JNQoP8KFyvD_8gG6jtLQIBjsYUeDn5s-13qoRzbmFwwIN0Y3CCdmGDdWRwgnZh"
+"enr:-Ja4QC2jfBk6yKoIlGi4OThcwV_AUsdcaeCYS2tUbPx1G7LyO33L_eNyblGXbsgytv4egs9eFjbIu3HrIm1m_3qPJIwCg2V0aMfGhAK_L1yAgmlkgnY0gmlwhGj4UdeJc2VjcDI1NmsxoQLQZ-d7rkZ6s-OKHQ2gJPfA_9FksEkEdZKusi5BHE11OoRzbmFwwIN0Y3CCdmE"
 ```
 
 #### Api node id
 ```
-"5183bc47d17214ace8baf8719efcf8e2ead3fe6365cee4bc60e1f8fa1babab40"
+"e55950f3035a23d0fc99537fd423e78e2b71f0027342b01dc8ae2514bf510a76"
 ```
 
 #### Api node genesis
 ```
-"0x328cea3299b1e42d7e158efec83450502027701df59560e2ea605656d3ea6621"
+"0x6c32a23f0ad9beb9608f1ab0da83532cf7932776a13cafd5d3a8f87d8cc0bc1f"
 ```
 ## Gebruik van het netwerk
 
