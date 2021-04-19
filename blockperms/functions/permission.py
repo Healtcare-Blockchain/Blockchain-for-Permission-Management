@@ -2,7 +2,7 @@ import json
 
 from web3 import Web3
 
-w3 = Web3(Web3.HTTPProvider('http://127.0.0.1:8085'))
+w3 = Web3(Web3.HTTPProvider('http://104.248.81.215:8545'))
 w3.eth.default_account = w3.eth.accounts[0]
 
 def set_permission(sender, they):
