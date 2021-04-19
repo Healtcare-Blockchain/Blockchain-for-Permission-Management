@@ -8,13 +8,14 @@ w3.eth.default_account = w3.eth.accounts[0]
 def set_permission(sender, they):
     if (w3.isConnected()):
         print("Connecting to Node succesful")
-
-        trufflefile = json.load(open('./abi/UserPermissions.json'))
+        w3.geth.personal.unlock_account(sender, "")
+        w3.geth.personal.unlock_account(they, "")
+        trufflefile = json.load(open('../../contracts/abi/UserPermissions.json'))
         abi = trufflefile['abi']
         permissions_contract = w3.eth.contract(address='0x1aF4522DE8AD97869909EBd0987BFB879670d556', abi=abi)
 
-        # sender = '0x490CD3cAbED9f706055e617Ed09F96a905E0BD31';
-        # they = '0x50b72d23E5F3c1E0002E2E4C44C2f01ddd605b6F';
+        sender = '0x490CD3cAbED9f706055e617Ed09F96a905E0BD31';
+        they = '0x50b72d23E5F3c1E0002E2E4C44C2f01ddd605b6F';
 
         permissions_contract.functions.setPermissions(sender, they, True).call()
         gas_estimate = permissions_contract.functions.setPermissions(w3.eth.accounts[0], w3.eth.accounts[1], True).estimateGas()
@@ -37,7 +38,7 @@ def set_permission(sender, they):
 def check_permission():
     if (w3.isConnected()):
         print("Connecting to Node succesful")
-        trufflefile = json.load(open('./abi/UserPermissions.json'))
+        trufflefile = json.load(open('../../contracts/abi/UserPermissions.json'))
         abi = trufflefile['abi']
         contract = w3.eth.contract(address='0x1aF4522DE8AD97869909EBd0987BFB879670d556', abi=abi)
         sender = '0x490CD3cAbED9f706055e617Ed09F96a905E0BD31'
