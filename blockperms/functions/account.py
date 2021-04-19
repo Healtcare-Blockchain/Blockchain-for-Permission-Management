@@ -1,8 +1,7 @@
 import json
 
 from web3 import Web3
-from blockperms import connection
-w3 = Web3(Web3.HTTPProvider(connection.connection_settings()))
+w3 = Web3(Web3.HTTPProvider('http://104.248.81.215:8545'))
 w3.eth.default_account = w3.eth.accounts[0]
 
 def get_privatekey():
