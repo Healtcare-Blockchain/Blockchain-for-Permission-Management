@@ -1,8 +1,8 @@
 import json
 
 from web3 import Web3
-
-w3 = Web3(Web3.HTTPProvider('http://127.0.0.1:8085'))
+from blockperms import connection
+w3 = Web3(Web3.HTTPProvider(connection.connection_settings()))
 w3.eth.default_account = w3.eth.accounts[0]
 
 def get_privatekey():
@@ -27,3 +27,6 @@ def hello_world():
         return("Response: " + answer)
     else:
         return("Connecting to Node failed")
+
+# TODO
+#def list_accounts():

@@ -1,8 +1,6 @@
 from fastapi import FastAPI
 
-import permission_functions as pmf
-
-#to see api documentation go to http://127.0.0.1:8000/docs or http://127.0.0.1:8000/redoc
+#to see api documentation go to your-link/docs or your-link/redoc
 
 
 app = FastAPI()
