@@ -8,14 +8,3 @@ app = FastAPI()
 @app.get("/")
 async def root():
     return {"message": "Api is running"}
-
-
-@app.post("/post/permissions/")
-async def set_permission():
-    sender = ""
-    they = ""
-    return {'true'}
-
-@app.get("/get/permissions/")
-async def check_permission():
-     return {'done'}
