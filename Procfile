@@ -1,1 +1,1 @@
-web: gunicorn --worker-tmp-dir /dev/shm --config gunicorn.config.py api.main:app
+web: gunicorn --worker-tmp-dir /dev/shm --config gunicorn.config.py blockperms.main:app
