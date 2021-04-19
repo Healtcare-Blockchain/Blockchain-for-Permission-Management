@@ -1,5 +1,6 @@
 import json
 
+import web3
 from web3 import Web3
 
 w3 = Web3(Web3.HTTPProvider('http://104.248.81.215:8545'))
