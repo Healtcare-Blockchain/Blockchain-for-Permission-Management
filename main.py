@@ -19,7 +19,7 @@ async def root():
     return {"message": "Api is running"}
 
 @app.get("/permissions/check")
-async def checkPermission(permission: Permission):
+async def checkPermission():
     return {"permission": "granted"}
 
 @app.get("/permissions/set")
