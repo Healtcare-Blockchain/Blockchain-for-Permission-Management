@@ -1,7 +1,7 @@
 from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
-import permission
+from blockperms.functions import permission
 
 
 #to see api documentation go to your-link/docs or your-link/redoc
