@@ -8,6 +8,6 @@ install:
 services:
   - docker
 script:
-  - pytest #run tests
+ # - pytest #run tests
 after_success:
-  - codecov # get coverage
+ # - codecov # get coverage
