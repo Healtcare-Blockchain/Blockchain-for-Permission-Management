@@ -1,8 +1,8 @@
 from typing import Optional
 
 from fastapi import FastAPI
-from functions import permission as perm
 from pydantic import BaseModel
+
 
 #to see api documentation go to your-link/docs or your-link/redoc
 
@@ -20,8 +20,8 @@ async def root():
 
 @app.get("/permissions/check")
 async def checkPermission(permission: Permission):
-    return {perm.check_permission()}
+    return {"permission": "granted"}
 
 @app.get("/permissions/set")
 async def setPermissions():
-    return {"message": "Api is running"}
+    return {"Permission": "Permission has been set or updated"}
