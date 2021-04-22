@@ -1,6 +1,5 @@
 import json
 
-import web3
 from web3 import Web3
 
 w3 = Web3(Web3.HTTPProvider('http://104.248.81.215:8545'))
@@ -11,7 +10,7 @@ def set_permission(sender, they):
         print("Connecting to Node succesful")
         w3.geth.personal.unlock_account(sender, "")
         w3.geth.personal.unlock_account(they, "")
-        trufflefile = json.load(open('../../contracts/abi/UserPermissions.json'))
+        trufflefile = json.load(open('contracts/abi/UserPermissions.json'))
         abi = trufflefile['abi']
         permissions_contract = w3.eth.contract(address='0x1aF4522DE8AD97869909EBd0987BFB879670d556', abi=abi)
 
@@ -39,7 +38,7 @@ def set_permission(sender, they):
 def check_permission():
     if (w3.isConnected()):
         print("Connecting to Node succesful")
-        trufflefile = json.load(open('../../contracts/abi/UserPermissions.json'))
+        trufflefile = json.load(open('contracts/abi/UserPermissions.json'))
         abi = trufflefile['abi']
         contract = w3.eth.contract(address='0x1aF4522DE8AD97869909EBd0987BFB879670d556', abi=abi)
         sender = '0x490CD3cAbED9f706055e617Ed09F96a905E0BD31'
