@@ -7,8 +7,7 @@ install:
   - pip install -r blockperms/requirements.txt
 services:
   - docker
-
-#script:
-# - pytest #run tests
+script:
+  - pytest #run tests
 #after_success:
 # - codecov # get coverage
