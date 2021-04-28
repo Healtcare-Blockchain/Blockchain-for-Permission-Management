@@ -2,27 +2,23 @@ import json
 
 from web3 import Web3
 
+from . import blockchain
+from . import account
 
-def connection_setup():
-    w3 = Web3(Web3.HTTPProvider('http://104.248.81.215:8545'))
-    w3.eth.default_account = w3.eth.accounts[0]
-    return w3
-
-def set_permission(sender, they):
-    w3 = connection_setup()
+def set_permission(sender, sender_pass, they, they_pass):
+    w3 = blockchain.connection_setup()
     if (w3.isConnected()):
+        print(w3.eth.accounts)
         print("Connecting to Node succesful")
-        w3.geth.personal.unlock_account(sender, "")
-        w3.geth.personal.unlock_account(they, "")
-        trufflefile = json.load(open('../contracts/abi/UserPermissions.json'))
+        account.unlock_account(sender, sender_pass)
+        account.unlock_account(they, they_pass)
+
+        trufflefile = json.load(open('contracts/abi/UserPermissions.json'))
         abi = trufflefile['abi']
         permissions_contract = w3.eth.contract(address='0x7c32Cd419D003dEDcc3EC161B20296d3A42b465F', abi=abi)
 
-        # sender = '0x490CD3cAbED9f706055e617Ed09F96a905E0BD31';
-        # they = '0x50b72d23E5F3c1E0002E2E4C44C2f01ddd605b6F';
-
         permissions_contract.functions.setPermissions(sender, they, True).call()
-        gas_estimate = permissions_contract.functions.setPermissions(w3.eth.accounts[0], w3.eth.accounts[1], True).estimateGas()
+        gas_estimate = permissions_contract.functions.setPermissions(sender, they, True).estimateGas()
         print(f'Gas estimate to transact with set_permission: {gas_estimate}')
 
         print(f'Sending transaction to manage permission for: {sender} \n')
@@ -40,14 +36,12 @@ def set_permission(sender, they):
         return("Connecting to Node failed")
 
 def check_permission(sender, they):
-    w3 = connection_setup()
+    w3 = blockchain.connection_setup()
     if (w3.isConnected()):
         print("Connecting to Node succesful")
-        trufflefile = json.load(open('../contracts/abi/UserPermissions.json'))
+        trufflefile = json.load(open('contracts/abi/UserPermissions.json'))
         abi = trufflefile['abi']
         contract = w3.eth.contract(address='0x7c32Cd419D003dEDcc3EC161B20296d3A42b465F', abi=abi)
-        # sender = '0x490CD3cAbED9f706055e617Ed09F96a905E0BD31'
-        # they = '0x50b72d23E5F3c1E0002E2E4C44C2f01ddd605b6F'
         permission = contract.functions.getPermitted(sender, they).call()
         if permission:
             set_permission = "Permission granted"
