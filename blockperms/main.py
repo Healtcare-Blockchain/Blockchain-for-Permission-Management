@@ -30,11 +30,11 @@ async def set_permissions():
     they_pass = 'a2f44c8fb33b804616dc2d9ae1420158c415ae2883078830773a658017d2d746'
     return {"Permission": permission.set_permission(sender, sender_pass, they, sender_pass)}
 
-@app.get("permission/check")
+@app.get("/permission/check")
 async def permission_check():
     return {"permission": "True"}
 
-@app.get("permission/set")
+@app.get("/permission/set")
 async def permission_set():
     return {"Permission": "Set True between 0xD3bb2A7a09a7b9DDa8D55Be15f5e3f9092BE8A37 : 0xe3AB610EB45ca7Af9d529C46812e550B62c4Ff5c"}
 
