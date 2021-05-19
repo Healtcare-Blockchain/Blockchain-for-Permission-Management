@@ -17,7 +17,7 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Api is running"}
+    return {"message": "Api is running!!!"}
 
 
 @app.get("/permissions/check")
