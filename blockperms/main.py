@@ -3,15 +3,17 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from functions import permission
 import uvicorn
+from functions import blockchain
+from functions import account
+import xml.etree.ElementTree as ET
 
 # to see api documentation go to your-link/docs or your-link/redoc
 
 class Permission(BaseModel):
-    sender: str
-    receiver: str
-    permission: Optional[bool] = None
-    # type: # Optional[tuple] = None
-
+    SenderId: str
+    ReceiverId: str
+    Permission: Optional[bool] = None
+    #type: # Optional[tuple] = None
 
 app = FastAPI()
 
@@ -20,28 +22,57 @@ async def root():
     return {"message": "Api is running!!!"}
 
 
-@app.get("/permissions/check")
-async def check_permission():
-    return {"permission": permission.check_permission("0xD3bb2A7a09a7b9DDa8D55Be15f5e3f9092BE8A37", "0xe3AB610EB45ca7Af9d529C46812e550B62c4Ff5c")}
+@app.post("/permissions/check")
+async def check_permission(permission : Permission):
+    verry_secure_file = ET.parse('users.xml')
+    root = verry_secure_file.getroot()
+    # users = verry_secure_file.getElementByTagName('user')
+    sender = None
+    receiver = None
 
+    for user in root:
+        print(user[1].attrib)
+        print(permission.SenderId)
+        if user[0].attrib == permission.SenderId:
+            sender = user[1].attrib
+        elif user[0].attrib == permission.SenderId:
+            receiver = user[1].attrib
 
-@app.get("/permissions/set")
-async def set_permissions():
-    sender = '0xD3bb2A7a09a7b9DDa8D55Be15f5e3f9092BE8A37'
-    sender_pass = 'Chasity-Lent-Dab-Gigahertz-Litter3-Drastic'
-    they = '0xe3AB610EB45ca7Af9d529C46812e550B62c4Ff5c'
-    they_pass = 'a2f44c8fb33b804616dc2d9ae1420158c415ae2883078830773a658017d2d746'
-    return {"Permission": permission.set_permission(sender, sender_pass, they, sender_pass)}
+    if sender or receiver == None:
+        print(sender + receiver)
+        return {"Error": "One or more users dont exist"}
 
+    return {"permission": permission.check_permission(sender, receiver)}
 
-@app.get("permission/check")
-async def permission_check():
-    return {"permission": "True"}
+@app.post("/permissions/set")
+async def set_permissions(permission : Permission):
+    verry_secure_file = ET.parse('users.xml')
+    root = verry_secure_file.getroot()
+    # users = verry_secure_file.getElementByTagName('user')
+    sender = None
+    receiver = None
 
+    for user in root:
+        if user[0] == permission.SenderId:
+            sender = user[1]
+            sender_pass = user[2]
+        elif user[0] == permission.SenderId:
+            receiver = user[1]
+            receiver_pass = user[2]
 
-@app.get("permission/set")
-async def permission_set():
-    return {"Permission": "Set True between 0xD3bb2A7a09a7b9DDa8D55Be15f5e3f9092BE8A37 : 0xe3AB610EB45ca7Af9d529C46812e550B62c4Ff5c"}
+    if sender or receiver == None:
+        print(sender + receiver)
+        return {"Error": "One or more users dont exist"}
+
+    return {"Permission": permission.set_permission(sender, sender_pass, receiver, receiver_pass, permission.permission)}
+
+@app.get("/test")
+async def connection_check():
+    return {blockchain.connection_setup()}
+
+@app.get("/accounts")
+async def get_accounts():
+    return {"Accounts": account.list_accounts()}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

@@ -1,4 +1,3 @@
-import json
 from . import blockchain
 
 def unlock_account(address, passphrase):
@@ -10,5 +9,6 @@ def unlock_account(address, passphrase):
     else:
         print("Account unlocked")
 
-# TODO
-#def list_accounts():
+def list_accounts():
+    w3 = blockchain.connection_setup()
+    return w3.eth.accounts
