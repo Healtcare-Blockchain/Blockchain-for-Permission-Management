@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  api:
+    build:
+        context: ./blockperms
+        dockerfile: Dockerfile
+    image: api
+    container_name: api
+    restart: always
+    ports:
+        - 0.0.0.0:8000:8000
+    volumes:
+        - ./blockperms:/usr/src/app
