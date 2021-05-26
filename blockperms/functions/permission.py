@@ -17,7 +17,7 @@ def set_permission(sender, sender_pass, receiver, receiver_pass, permission):
 
         trufflefile = json.load(open('contracts/abi/UserPermissions.json'))
         abi = trufflefile['abi']
-        permissions_contract = w3.eth.contract(address='0xde200A090A976AC656A8DaA5ae7ac1d7D3F0aB70', abi=abi)
+        permissions_contract = w3.eth.contract(address='0x91c75F69D452C0fdb7184C0297115e215865c5E3', abi=abi)
 
         permissions_contract.functions.setPermissions(sender, receiver, permission).call()
         gas_estimate = permissions_contract.functions.setPermissions(sender, receiver, permission).estimateGas()
@@ -46,7 +46,7 @@ def check_permission(sender, they):
         print("Connecting to Node succesful")
         trufflefile = json.load(open('contracts/abi/UserPermissions.json'))
         abi = trufflefile['abi']
-        contract = w3.eth.contract(address='0xde200A090A976AC656A8DaA5ae7ac1d7D3F0aB70', abi=abi)
+        contract = w3.eth.contract(address='0x91c75F69D452C0fdb7184C0297115e215865c5E3', abi=abi)
         permission = contract.functions.getPermitted(sender, they).call()
         if permission:
             set_permission = "Permission granted"

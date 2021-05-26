@@ -9,5 +9,5 @@ services:
   - docker
 script:
   - pytest #run tests
-#after_success:
-# - codecov # get coverage
+after_success:
+ - codecov # get coverage
