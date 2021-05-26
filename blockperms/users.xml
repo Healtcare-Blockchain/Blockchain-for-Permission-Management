@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<users>
+    <user>
+        <uuId>Dgd9r</uuId>
+        <chainId>0x490CD3cAbED9f706055e617Ed09F96a905E0BD31</chainId>
+        <password>root</password>
+    </user>
+    <user>
+        <uuId>7xg3x</uuId>
+        <chainId>0x50b72d23E5F3c1E0002E2E4C44C2f01ddd605b6F</chainId>
+        <password>root</password>
+    </user>
+</users>
