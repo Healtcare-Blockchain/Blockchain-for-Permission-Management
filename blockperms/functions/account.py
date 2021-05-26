@@ -1,6 +1,5 @@
 from . import blockchain
 
-
 def unlock_account(address, passphrase):
     w3 = blockchain.connection_setup()
     try:

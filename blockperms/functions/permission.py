@@ -1,6 +1,8 @@
 import json
 import logging
 
+from web3 import Web3
+
 from . import blockchain
 from . import account
 

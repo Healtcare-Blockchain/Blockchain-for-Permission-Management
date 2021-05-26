@@ -2,12 +2,12 @@ from typing import Optional
 from fastapi import FastAPI
 from pydantic import BaseModel
 from functions import permission
+import uvicorn
 from functions import blockchain
 from functions import account
 import xml.etree.ElementTree as ET
 
-
-#to see api documentation go to your-link/docs or your-link/redoc
+# to see api documentation go to your-link/docs or your-link/redoc
 
 class Permission(BaseModel):
     SenderId: str
@@ -19,7 +19,8 @@ app = FastAPI()
 
 @app.get("/")
 async def root():
-    return {"message": "Api is running"}
+    return {"message": "Api is running!!!"}
+
 
 @app.post("/permissions/check")
 async def check_permission(permission : Permission):
@@ -73,3 +74,5 @@ async def connection_check():
 async def get_accounts():
     return {"Accounts": account.list_accounts()}
 
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8000)
