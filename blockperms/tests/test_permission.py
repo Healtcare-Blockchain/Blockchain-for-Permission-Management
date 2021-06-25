@@ -10,11 +10,16 @@ class BlockchainTest(unittest.TestCase):
     def setUpClass(self):
         # Set up initial connection
         self.connection = connection_setup()
+        print(self.connection.isConnected())
 
     def test_connection(self):
         # Check if the connection is working
         self.assertTrue(self.connection.isConnected(), msg="Not connected to chain")
         # self.assertEqual(type(self.connection), Web3, msg="Connection")
+
+        
+
+
 
 if __name__ == '__main__':
     unittest.main()
