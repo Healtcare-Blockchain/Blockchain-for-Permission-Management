@@ -7,7 +7,7 @@ def unlock_account(address, passphrase):
     except:
         raise
     else:
-        print("Account unlocked")
+        return "Account unlocked"
 
 def list_accounts():
     w3 = blockchain.connection_setup()

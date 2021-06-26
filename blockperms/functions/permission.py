@@ -49,10 +49,12 @@ def check_permission(sender, they):
         contract = w3.eth.contract(address='0x91c75F69D452C0fdb7184C0297115e215865c5E3', abi=abi)
         permission = contract.functions.getPermitted(sender, they).call()
         if permission:
+            print("permission granted")
             set_permission = "Permission granted"
-        elif not permission:
-            print(permission)
+        else:
+            print("permission not granted")
             set_permission = "permission not granted"
-        return(set_permission)
+        
+        return set_permission
     else:
         return("Connecting to Node failed")
